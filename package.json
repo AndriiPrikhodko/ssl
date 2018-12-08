@@ -1,0 +1,15 @@
+{
+  "name": "autotests",
+  "description": "A package using versioning for autotests",
+  "author": "Andrii Prykhodko",
+  "devDependencies": {
+    "protractor": "5.4.1",
+    "jasmine-spec-reporter": "^4.2.1",
+    "ramda": "0.23.0"
+  },
+  "engine": "node >= 0.4.1",
+  "scripts": {
+    "test": "node_modules/protractor/bin/protractor config.js",
+    "postinstall": "node_modules/protractor/bin/webdriver-manager update"
+  }
+}
