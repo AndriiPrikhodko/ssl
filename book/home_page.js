@@ -1,6 +1,6 @@
 homePage = function(){
-  homeURL = "https://ssls.com"
-  openPage : {browser.get(this.homeURL)}
+  homeURL = "https://www.ssls.com"
+  openPage : {browser.get(homeURL)}
 }
 
 module.exports = homePage
