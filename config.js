@@ -11,6 +11,8 @@ exports.config = {
     }
   },
   onPrepare: function () {
+    var config = require("./my_config")
+    require("jasmine-expect");
     jasmine.getEnv().addReporter(new SpecReporter({
       spec: {
         displayStacktrace: true

@@ -3,8 +3,9 @@
   "description": "A package using versioning for autotests",
   "author": "Andrii Prykhodko",
   "devDependencies": {
-    "protractor": "5.4.1",
+    "jasmine-expect": "^3.8.4",
     "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "5.4.1",
     "ramda": "0.23.0"
   },
   "engine": "node >= 0.4.1",
