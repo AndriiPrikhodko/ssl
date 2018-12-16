@@ -49,8 +49,12 @@ describe('Login suite', function() {
         instAuthorization.login();
         browser.wait(until.presenceOf(instAuthorization.emailErrorBox(), config.WAIT_TIME, 'Email error box does not apppear'));
         instAuthorization.emailErrorBox().getText()
-        .then(emailError => expect(unescape(escape(emailError).replace('%0A','%20'))).toBe('Oops, please enter your email')) // replace break line with space
+            .then(emailError => {
+                expect(unescape(escape(emailError).replace('%0A','%20'))).toBe('Oops, please enter your email') // replace break line with space
+            })
         instAuthorization.passwordErrorBox().getText()
-        .then(passwordError => expect(unescape(escape(passwordError).replace('%0A','%20'))).toBe('Looks like you’ve missed this one')) // replace break line with space
+            .then(passwordError => {
+                expect(unescape(escape(passwordError).replace('%0A','%20'))).toBe('Looks like you’ve missed this one') // replace break line with space
+            })
     })
 })
