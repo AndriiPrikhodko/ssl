@@ -10,7 +10,7 @@
   },
   "engine": "node >= 0.4.1",
   "scripts": {
-    "test": "node_modules/protractor/bin/protractor config.js",
-    "postinstall": "node_modules/protractor/bin/webdriver-manager update"
+    "test": "node node_modules/protractor/bin/protractor config.js",
+    "postinstall": "node node_modules/protractor/bin/webdriver-manager update"
   }
 }

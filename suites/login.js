@@ -16,11 +16,11 @@ describe('Login suite', function() {
         })
 
         it('Enter valid email and password', function() {
-            expect(browser.getCurrentUrl()).toEndWith('ssls.com/');
+            expect(browser.getCurrentUrl()).toEqual(instHome.url);
             browser.wait(until.presenceOf(instHome.loginLink(), config.WAIT_TIME, 'Login link is not present'));
             instHome.loginLink().click();
             browser.wait(until.presenceOf(instAuthorization.emailField(), config.WAIT_TIME, 'Authorization page is loaded'));
-            expect(browser.getCurrentUrl()).toEndWith('/authorize');
+            expect(browser.getCurrentUrl()).toEqual(instAuthorization.url);
             instAuthorization.enterEmail(config.USER_EMAIL);
             instAuthorization.enterPassword(config.USER_PASSWORD);
             instAuthorization.showPassword();
@@ -33,17 +33,17 @@ describe('Login suite', function() {
             browser.wait(until.presenceOf(instHome.logoutButton(), config.WAIT_TIME, 'Login link is not present'));
             instHome.logout();
             browser.wait(until.presenceOf(instAuthorization.emailField(), config.WAIT_TIME, 'Authorization page is loaded'));
-            expect(browser.getCurrentUrl()).toEndWith('/authorize');
+            expect(browser.getCurrentUrl()).toEqual(instAuthorization.url);
         })
     })
 
     it('Login with empty fields', function() {
         instHome.openPage();
-        expect(browser.getCurrentUrl()).toEndWith('ssls.com/');
+        expect(browser.getCurrentUrl()).toEqual(instHome.url);
         browser.wait(until.presenceOf(instHome.loginLink(), config.WAIT_TIME, 'Login link is not present'));
         instHome.loginLink().click();
         browser.wait(until.presenceOf(instAuthorization.emailField(), config.WAIT_TIME, 'Authorization page is loaded'));
-        expect(browser.getCurrentUrl()).toEndWith('/authorize');
+        expect(browser.getCurrentUrl()).toEqual(instAuthorization.url);
         instAuthorization.enterEmail('');
         instAuthorization.enterPassword('');
         instAuthorization.login();
